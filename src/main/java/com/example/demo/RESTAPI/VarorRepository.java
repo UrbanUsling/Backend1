@@ -1,4 +1,4 @@
-package RESTAPI;
+package com.example.demo.RESTAPI;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
