@@ -21,4 +21,9 @@ public class Varor {
     protected String namn;
     protected String pris;
 
+    public Varor(String namn, String pris){
+        this.namn = namn;
+        this.pris = pris;
+    }
+
 }
