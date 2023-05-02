@@ -1,12 +1,13 @@
 package com.example.demo.Models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
@@ -20,13 +21,21 @@ public class Ordering {
     @GeneratedValue
     protected long id;
     protected String date;
-    /*@ManyToOne
+    @ManyToOne
     @JoinColumn
     //Denna rad hör till 1-N-filmen
-    private Costumer costumer;*/
+    private Costumer costumer;
 
-    public Ordering(String date){
+    @ManyToMany
+    @JoinTable
+    private List<Varor> VarorIOrderingList = new ArrayList<>();
+
+    /*public void addVaror(Varor v){
+        Varor.add(v);
+    }*/
+
+    public Ordering(String date, Costumer costumer){
         this.date = date;
-        //this.costumer = costumer;
+        this.costumer = costumer;
     }
 }

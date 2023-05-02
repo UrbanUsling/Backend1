@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import com.example.demo.Models.Costumer;
+import com.example.demo.Models.Ordering;
 import com.example.demo.Models.Varor;
 import com.example.demo.Repositories.CostumerRepository;
 import com.example.demo.Repositories.OrderRepository;
@@ -23,9 +24,9 @@ public class DemoApplication {
 			Costumer c2 = new Costumer("Indy", "3808081123");
 			Costumer c3 = new Costumer("Lola", "3808081123");
 
-			/*Order kund1 = new Order( "435255", c1);
-			Order kund2 = new Order( "65464654", c2);
-			Order kund3 = new Order( "8768686", c3);*/
+			Ordering kund1 = new Ordering( "435255", c1);
+			Ordering kund2 = new Ordering( "65464654", c2);
+			Ordering kund3 = new Ordering( "8768686", c3);
 
 			Varor v1 = new Varor("Skor", "700");
 			Varor v2 = new Varor("Jacka","1700");
@@ -35,9 +36,9 @@ public class DemoApplication {
 			costRepo.save(c2);
 			costRepo.save(c3);
 
-			/*orderRepo.save(kund1);
+			orderRepo.save(kund1);
 			orderRepo.save(kund2);
-			orderRepo.save(kund3);*/
+			orderRepo.save(kund3);
 
 			varorRepo.save(v1);
 			varorRepo.save(v2);
