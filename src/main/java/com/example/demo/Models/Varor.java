@@ -1,4 +1,4 @@
-package com.example.demo.RESTAPI;
+package com.example.demo.Models;
 
 
 import jakarta.persistence.Entity;

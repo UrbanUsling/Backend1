@@ -18,11 +18,11 @@ public class Costumer {
     @GeneratedValue
     protected long id;
     protected String name;
-    protected String personId;
+    protected String personNr;
 
-    public Costumer(String name, String personId) {
+    public Costumer(String name, String personNr) {
         this.name = name;
-        this.personId = personId;
+        this.personNr = personNr;
     }
 
 }

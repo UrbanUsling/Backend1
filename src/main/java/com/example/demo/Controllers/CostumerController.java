@@ -3,10 +3,15 @@ package com.example.demo.Controllers;
 
 import com.example.demo.Models.Costumer;
 import com.example.demo.Repositories.CostumerRepository;
+import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.core.io.Resource;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.support.ServletContextResource;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 
 @RestController
@@ -27,7 +32,6 @@ public class CostumerController {
         log.debug("All books returned in DEBUG mess");
         return repo.findAll();
     }
-
     @RequestMapping("costumers/{id}")
     public Costumer findById(@PathVariable long id){
         log.info("Costumer found with id "+id);

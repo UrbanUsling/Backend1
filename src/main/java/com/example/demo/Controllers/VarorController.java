@@ -1,4 +1,6 @@
-package com.example.demo.RESTAPI;
+package com.example.demo.Controllers;
+import com.example.demo.Models.Varor;
+import com.example.demo.Repositories.VarorRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
