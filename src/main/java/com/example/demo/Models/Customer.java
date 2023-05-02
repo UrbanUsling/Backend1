@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
-public class Costumer {
+public class Customer {
 
     @Id
     @GeneratedValue
@@ -20,7 +20,7 @@ public class Costumer {
     protected String name;
     protected String personNr;
 
-    public Costumer(String name, String personNr) {
+    public Customer(String name, String personNr) {
         this.name = name;
         this.personNr = personNr;
     }

@@ -15,7 +15,7 @@ import java.util.List;
 @Entity
 
 
-public class Ordering {
+public class Orders {
 
     @Id
     @GeneratedValue
@@ -24,18 +24,18 @@ public class Ordering {
     @ManyToOne
     @JoinColumn
     //Denna rad hör till 1-N-filmen
-    private Costumer costumer;
+    private Customer customer;
 
     @ManyToMany
     @JoinTable
-    private List<Varor> VarorIOrderingList = new ArrayList<>();
+    private List<Items> VarorIOrderingList = new ArrayList<>();
 
     /*public void addVaror(Varor v){
         Varor.add(v);
     }*/
 
-    public Ordering(String date, Costumer costumer){
+    public Orders(String date, Customer customer){
         this.date = date;
-        this.costumer = costumer;
+        this.customer = customer;
     }
 }

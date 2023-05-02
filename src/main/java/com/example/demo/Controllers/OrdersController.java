@@ -1,27 +1,27 @@
 package com.example.demo.Controllers;
 
-import com.example.demo.Models.Ordering;
-import com.example.demo.Repositories.CostumerRepository;
-import com.example.demo.Repositories.OrderRepository;
+import com.example.demo.Models.Orders;
+import com.example.demo.Repositories.CustomerRepository;
+import com.example.demo.Repositories.OrdersRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@RestController
+public class OrdersController {
+    private final OrdersRepository OrderRepo;
+    private final CustomerRepository CustRepo;
+    private static final Logger log = LoggerFactory.getLogger(OrdersController.class);
 
-public class OrderController {
-    private final OrderRepository OrderRepo;
-    private final CostumerRepository CostRepo;
-    private static final Logger log = LoggerFactory.getLogger(OrderController.class);
-
-    OrderController(OrderRepository OrderRepo, CostumerRepository CostRepo){
+    OrdersController(OrdersRepository OrderRepo, CustomerRepository CustRepo){
         this.OrderRepo = OrderRepo;
-        this.CostRepo = CostRepo;
+        this.CustRepo = CustRepo;
 
     }
     @RequestMapping("orders")
-    public List<Ordering> getAllOrders(){
+    public List<Orders> getAllOrders(){
         log.info("All books returned");
         log.error("All books returned in ERROR mess");
         log.warn("All books returned in WARNING mess");

@@ -1,11 +1,11 @@
 package com.example.demo;
 
-import com.example.demo.Models.Costumer;
-import com.example.demo.Models.Ordering;
-import com.example.demo.Models.Varor;
-import com.example.demo.Repositories.CostumerRepository;
-import com.example.demo.Repositories.OrderRepository;
-import com.example.demo.Repositories.VarorRepository;
+import com.example.demo.Models.Customer;
+import com.example.demo.Models.Orders;
+import com.example.demo.Models.Items;
+import com.example.demo.Repositories.CustomerRepository;
+import com.example.demo.Repositories.OrdersRepository;
+import com.example.demo.Repositories.ItemsRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,19 +18,19 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 	@Bean
-	public CommandLineRunner demo(CostumerRepository costRepo, OrderRepository orderRepo, VarorRepository varorRepo){
+	public CommandLineRunner demo(CustomerRepository costRepo, OrdersRepository orderRepo, ItemsRepository varorRepo){
 		return (args) -> {
-			Costumer c1 = new Costumer("Lawrence", "8808081123");
-			Costumer c2 = new Costumer("Indy", "3808081123");
-			Costumer c3 = new Costumer("Lola", "3808081123");
+			Customer c1 = new Customer("Lawrence", "8808081123");
+			Customer c2 = new Customer("Indy", "3808081123");
+			Customer c3 = new Customer("Lola", "3808081123");
 
-			Ordering kund1 = new Ordering( "435255", c1);
-			Ordering kund2 = new Ordering( "65464654", c2);
-			Ordering kund3 = new Ordering( "8768686", c3);
+			Orders kund1 = new Orders( "435255", c1);
+			Orders kund2 = new Orders( "65464654", c2);
+			Orders kund3 = new Orders( "8768686", c3);
 
-			Varor v1 = new Varor("Skor", "700");
-			Varor v2 = new Varor("Jacka","1700");
-			Varor v3 = new Varor("Hatt", "300");
+			Items v1 = new Items("Skor", "700");
+			Items v2 = new Items("Jacka","1700");
+			Items v3 = new Items("Hatt", "300");
 
 			costRepo.save(c1);
 			costRepo.save(c2);

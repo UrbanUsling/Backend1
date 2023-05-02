@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
-public class Varor {
+public class Items {
 
     @Id
     @GeneratedValue
@@ -21,7 +21,7 @@ public class Varor {
     protected String namn;
     protected String pris;
 
-    public Varor(String namn, String pris){
+    public Items(String namn, String pris){
         this.namn = namn;
         this.pris = pris;
     }
