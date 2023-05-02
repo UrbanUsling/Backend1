@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Entity
 
 
-public class Order {
+public class Ordering {
 
     @Id
     @GeneratedValue
@@ -25,7 +25,7 @@ public class Order {
     //Denna rad hör till 1-N-filmen
     private Costumer costumer;*/
 
-    public Order(String date){
+    public Ordering(String date){
         this.date = date;
         //this.costumer = costumer;
     }

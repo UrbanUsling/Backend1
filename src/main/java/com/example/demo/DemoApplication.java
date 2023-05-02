@@ -1,7 +1,6 @@
 package com.example.demo;
 
 import com.example.demo.Models.Costumer;
-import com.example.demo.Models.Order;
 import com.example.demo.Models.Varor;
 import com.example.demo.Repositories.CostumerRepository;
 import com.example.demo.Repositories.OrderRepository;

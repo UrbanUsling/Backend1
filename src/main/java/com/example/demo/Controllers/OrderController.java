@@ -1,12 +1,10 @@
 package com.example.demo.Controllers;
 
-import com.example.demo.Models.Costumer;
-import com.example.demo.Models.Order;
+import com.example.demo.Models.Ordering;
 import com.example.demo.Repositories.CostumerRepository;
 import com.example.demo.Repositories.OrderRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.data.annotation.Id;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,7 +21,7 @@ public class OrderController {
 
     }
     @RequestMapping("orders")
-    public List<Order> getAllOrders(){
+    public List<Ordering> getAllOrders(){
         log.info("All books returned");
         log.error("All books returned in ERROR mess");
         log.warn("All books returned in WARNING mess");
