@@ -1,5 +1,7 @@
 package com.example.demo.Controllers;
+import com.example.demo.Models.Ordering;
 import com.example.demo.Models.Varor;
+import com.example.demo.Repositories.OrderRepository;
 import com.example.demo.Repositories.VarorRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,11 +14,13 @@ import java.util.List;
 public class VarorController {
 
     private final VarorRepository repo;
+    private final OrderRepository OrderRepo;
     private static final Logger log = LoggerFactory.getLogger(VarorController.class);
 
 
-    VarorController(VarorRepository repo){
+    VarorController(VarorRepository repo, OrderRepository OrderRepo){
         this.repo = repo;
+        this.OrderRepo=OrderRepo;
 
     }
     //Lista alla varor
@@ -51,4 +55,14 @@ public class VarorController {
         return repo.findAll();
 
     }
+    /*@PostMapping("varor/addToChart")
+    public String VarorAdd(@RequestParam Long costumerId, @RequestParam Long id){
+        Ordering order = OrderRepo.findById(costumerId).get();
+        if (order != null){
+            order.addVaror(new Ordering(saldo, ranta));
+            kundRepo.save(kund);
+        }
+        return "konto lades till hos kund med id "+kundId;
+    }
+    }*/
 }

@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface OrderRepository extends JpaRepository<Ordering, Long> {
 
-    public List<Ordering> findByDate(String date);
+    public List<Ordering> findByName(long Costumer_id);
 }

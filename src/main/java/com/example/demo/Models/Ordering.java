@@ -30,9 +30,9 @@ public class Ordering {
     @JoinTable
     private List<Varor> VarorIOrderingList = new ArrayList<>();
 
-    /*public void addVaror(Varor v){
-        Varor.add(v);
-    }*/
+    public void addVaror(Varor v){
+        VarorIOrderingList.add(v);
+    }
 
     public Ordering(String date, Costumer costumer){
         this.date = date;
