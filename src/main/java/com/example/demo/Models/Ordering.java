@@ -12,21 +12,17 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
-
-
-public class Order {
+public class Ordering {
 
     @Id
     @GeneratedValue
     protected long id;
-    protected String date;
-    /*@ManyToOne
-    @JoinColumn
-    //Denna rad hör till 1-N-filmen
-    private Costumer costumer;*/
+    protected String name;
+    protected String datum;
 
-    public Order(String date){
-        this.date = date;
-        //this.costumer = costumer;
+    public Ordering(String name, String datum) {
+        this.name = name;
+        this.datum = datum;
     }
+
 }

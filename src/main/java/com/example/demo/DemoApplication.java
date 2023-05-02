@@ -1,9 +1,9 @@
 package com.example.demo;
 
 import com.example.demo.Models.Costumer;
-import com.example.demo.Models.Order;
+import com.example.demo.Models.Varor;
 import com.example.demo.Repositories.CostumerRepository;
-import com.example.demo.Repositories.OrderRepository;
+import com.example.demo.Repositories.VarorRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,6 +14,23 @@ public class DemoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
+	}
+	@Bean
+	public CommandLineRunner demo(CostumerRepository costRepo, VarorRepository varaRepo) {
+		return (args) -> {
+			Costumer c1 = new Costumer("Lawrence", "8808081123");
+			Costumer c2 = new Costumer("Indy", "3808081123");
+			Costumer c3 = new Costumer("Lola", "3808081123");
+			costRepo.save(c1);
+			costRepo.save(c2);
+			costRepo.save(c3);
+			Varor v1 = new Varor("nintendo", "2200");
+			Varor v2 = new Varor("sega", "200");
+			Varor v3 = new Varor("sony", "3200");
+			varaRepo.save(v1);
+			varaRepo.save(v2);
+			varaRepo.save(v3);
+		};
 	}
 	/*@Bean
 	public CommandLineRunner demo(CostumerRepository costRepo, OrderRepository orderRepo){
