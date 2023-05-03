@@ -42,14 +42,14 @@ public class OrdersController {
         return OrderRepo.findById(customerId);
     }*/
     @RequestMapping("orders/add/{ItemsId}/{CustomerId}")
-    public String addItems(@RequestParam Long itemsId, @RequestParam Long customerId){
-        Customer customer = CustRepo.findById(customerId).get();
-        Items item = ItemsRepo.findById(itemsId).get();
+    public String addItems(@PathVariable Long ItemsId, @PathVariable Long CustomerId){
+        Customer customer = CustRepo.findById(CustomerId).get();
+        Items item = ItemsRepo.findById(ItemsId).get();
 
         new Orders((LocalDate.now()).toString(), customer).addItems(item);
 
 
-        return "konto lades till hos kund med id "+customerId;
+        return "konto lades till hos kund med id "+CustomerId;
     }
 
 }

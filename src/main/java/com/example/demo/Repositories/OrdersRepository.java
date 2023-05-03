@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface OrdersRepository extends JpaRepository<Orders, Long> {
 
-    public List<Orders> findByDate(String date);
-    public List<Orders> findOrdersByItemsId(Long ItemsId);
+    //public List<Orders> findByDate(String date);
+    //public List<Orders> findOrdersByItemsId(Long ItemsId);
 }

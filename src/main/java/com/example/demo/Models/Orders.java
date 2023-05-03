@@ -39,7 +39,8 @@ public class Orders {
     @JoinTable
 
 
-    private Set<Items> items = new HashSet<>();
+    //private Set<Items> items = new HashSet<>();
+    private List<Items> items = new ArrayList<>();
 
     public Orders(String date, Customer customer){
         this.date = date;
