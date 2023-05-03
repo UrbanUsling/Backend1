@@ -45,10 +45,11 @@ public class CustomerController {
         return repo.findAll();
     }
 
-    @PostMapping("customers/add")
-    public List<Customer> addCustomers(@RequestBody Customer b){
-        repo.save(b);
+    @RequestMapping("customers/add")
+    public List<Customer> addCustomers(@RequestParam String name, @RequestParam String PersonNr){
+        repo.save(new Customer(name, PersonNr));
         return repo.findAll();
+
     }
 
 
