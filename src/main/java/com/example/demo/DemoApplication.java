@@ -24,13 +24,18 @@ public class DemoApplication {
 			Customer c2 = new Customer("Indy", "3808081123");
 			Customer c3 = new Customer("Lola", "3808081123");
 
-			Orders kund1 = new Orders( "435255", c1);
-			Orders kund2 = new Orders( "65464654", c2);
-			Orders kund3 = new Orders( "8768686", c3);
+
 
 			Items v1 = new Items("Skor", "700");
 			Items v2 = new Items("Jacka","1700");
 			Items v3 = new Items("Hatt", "300");
+
+			Orders kund1 = new Orders( "435255", c1);
+			kund1.addItems(v1);
+			Orders kund2 = new Orders( "65464654", c2);
+			kund2.addItems(v2);
+			Orders kund3 = new Orders( "8768686", c3);
+			kund3.addItems(v3);
 
 			costRepo.save(c1);
 			costRepo.save(c2);
