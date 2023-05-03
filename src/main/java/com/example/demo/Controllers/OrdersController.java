@@ -30,10 +30,6 @@ public class OrdersController {
     }
     @RequestMapping("orders")
     public List<Orders> getAllOrders(){
-        log.info("All books returned");
-        log.error("All books returned in ERROR mess");
-        log.warn("All books returned in WARNING mess");
-        log.debug("All books returned in DEBUG mess");
         return OrderRepo.findAll();
     }
     /*@RequestMapping("orders/{customerId}")
@@ -46,7 +42,9 @@ public class OrdersController {
         Customer customer = CustRepo.findById(CustomerId).get();
         Items item = ItemsRepo.findById(ItemsId).get();
 
-        new Orders((LocalDate.now()).toString(), customer).addItems(item);
+        Orders k1 = new Orders((LocalDate.now()).toString(), customer);
+        OrderRepo.save(k1);
+        k1.addItems(item);
 
 
         return "konto lades till hos kund med id "+CustomerId;
