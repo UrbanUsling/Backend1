@@ -15,7 +15,6 @@ import java.util.Set;
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
-//@Table(name = "Items")
 public class Items {
 
     @Id
@@ -23,10 +22,6 @@ public class Items {
     protected long id;
     protected String namn;
     protected String pris;
-    //@ManyToMany(cascade = CascadeType.ALL)
-    /*@ManyToMany(mappedBy = "Items")
-    @JsonIgnore
-    private Set<Orders> orders = new HashSet<>();*/
 
     public Items(String namn, String pris ){
         this.namn = namn;

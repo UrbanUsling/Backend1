@@ -8,5 +8,4 @@ import java.util.List;
 public interface ItemsRepository extends JpaRepository<Items, Long> {
 
     public List<Items> findByNamn(String vara);
-    //public List<Items> findItemsByOrdersId(Long OrdersId);
 }

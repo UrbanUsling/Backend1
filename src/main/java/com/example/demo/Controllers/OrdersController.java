@@ -6,14 +6,13 @@ import com.example.demo.Models.Orders;
 import com.example.demo.Repositories.CustomerRepository;
 import com.example.demo.Repositories.ItemsRepository;
 import com.example.demo.Repositories.OrdersRepository;
-import org.hibernate.cache.spi.support.AbstractReadWriteAccess;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class OrdersController {
@@ -32,11 +31,11 @@ public class OrdersController {
     public List<Orders> getAllOrders(){
         return OrderRepo.findAll();
     }
-    /*@RequestMapping("orders/{customerId}")
-    public List<Orders> findById(@PathVariable String customerId){
+    @RequestMapping("orders/{customerId}")
+    public List<Orders> findById(@PathVariable long customerId){
         log.info("Order found with costumer id "+customerId);
-        return OrderRepo.findById(customerId);
-    }*/
+        return OrderRepo.findAllByCustomer_Id(customerId);
+    }
     @RequestMapping("orders/add/{ItemsId}/{CustomerId}")
     public String addItems(@PathVariable Long ItemsId, @PathVariable Long CustomerId){
         Customer customer = CustRepo.findById(CustomerId).get();

@@ -17,7 +17,7 @@ public class DemoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
 	}
-	@Bean
+	/*@Bean
 	public CommandLineRunner demo(CustomerRepository costRepo, OrdersRepository orderRepo, ItemsRepository varorRepo){
 		return (args) -> {
 			Customer c1 = new Customer("Lawrence", "8808081123");
@@ -30,7 +30,7 @@ public class DemoApplication {
 			Items v2 = new Items("Jacka","1700");
 			Items v3 = new Items("Hatt", "300");
 
-			Orders kund1 = new Orders( "435255", c1);
+			Orders kund1 = new Orders( "435255", c2);
 			kund1.addItems(v1);
 			Orders kund2 = new Orders( "65464654", c2);
 			kund2.addItems(v2);
@@ -49,6 +49,6 @@ public class DemoApplication {
 			varorRepo.save(v2);
 			varorRepo.save(v3);
 		};
-	}
+	}*/
 
 }

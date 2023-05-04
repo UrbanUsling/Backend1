@@ -17,7 +17,7 @@ import java.util.Set;
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
-//@Table(name = "Orders")
+
 
 
 public class Orders {
@@ -28,18 +28,12 @@ public class Orders {
     protected String date;
     @ManyToOne
     @JoinColumn
-    //Denna rad hör till 1-N-filmen
+
     private Customer customer;
 
-    /*
-    public void addVaror(Varor v){
-        Varor.add(v);
-    }*/
+
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable
-
-
-    //private Set<Items> items = new HashSet<>();
     private List<Items> items = new ArrayList<>();
 
     public Orders(String date, Customer customer){
