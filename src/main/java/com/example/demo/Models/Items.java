@@ -20,11 +20,11 @@ public class Items {
     @Id
     @GeneratedValue
     protected long id;
-    protected String namn;
+    protected String name;
     protected String pris;
 
-    public Items(String namn, String pris ){
-        this.namn = namn;
+    public Items(String name, String pris ){
+        this.name = name;
         this.pris = pris;
     }
 
