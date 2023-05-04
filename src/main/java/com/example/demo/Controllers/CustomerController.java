@@ -35,7 +35,7 @@ public class CustomerController {
 
     @RequestMapping("customers/{name}/name")
     public List<Customer> findByName(@PathVariable String name){
-        return repo.findByName(name);
+        return repo.findCustByName(name);
     }
 
     @RequestMapping("customers/{id}/delete")
@@ -48,6 +48,7 @@ public class CustomerController {
     @RequestMapping("customers/add")
     public List<Customer> addCustomers(@RequestParam String name, @RequestParam String PersonNr){
         repo.save(new Customer(name, PersonNr));
+        log.info("Kunden har lagts till.");
         return repo.findAll();
 
     }

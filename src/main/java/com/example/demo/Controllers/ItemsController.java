@@ -35,7 +35,7 @@ public class ItemsController {
     //Hitta genom varunamn
     @RequestMapping("items/{item}/item")
     public List<Items> findByItem(@PathVariable String item){
-        return repo.findByNamn(item);
+        return repo.findItemsByName(item);
     }
     //ta bort varor
     @RequestMapping("items/{id}/delete")
@@ -48,6 +48,7 @@ public class ItemsController {
     @PostMapping("items/add")
     public List<Items> addItems(@RequestBody Items i){
         repo.save(i);
+        log.info("Varan har lagts till.");
         return repo.findAll();
 
     }

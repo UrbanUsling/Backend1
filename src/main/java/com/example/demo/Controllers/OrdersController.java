@@ -44,8 +44,7 @@ public class OrdersController {
         Orders k1 = new Orders((LocalDate.now()).toString(), customer);
         OrderRepo.save(k1);
         k1.addItems(item);
-
-
+        log.info("Ordern har lagts till.");
         return "konto lades till hos kund med id "+CustomerId;
     }
 

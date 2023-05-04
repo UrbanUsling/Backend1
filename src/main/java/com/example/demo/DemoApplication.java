@@ -17,6 +17,7 @@ public class DemoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
 	}
+	//Bean som lägger till kunder varor och ordrar.
 	/*@Bean
 	public CommandLineRunner demo(CustomerRepository costRepo, OrdersRepository orderRepo, ItemsRepository varorRepo){
 		return (args) -> {

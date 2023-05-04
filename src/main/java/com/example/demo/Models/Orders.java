@@ -28,7 +28,6 @@ public class Orders {
     protected String date;
     @ManyToOne
     @JoinColumn
-
     private Customer customer;
 
 
