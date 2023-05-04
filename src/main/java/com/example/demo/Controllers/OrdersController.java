@@ -1,15 +1,13 @@
 package com.example.demo.Controllers;
 
 import com.example.demo.Models.Customer;
-import com.example.demo.Models.Items;
+import com.example.demo.Models.Item;
 import com.example.demo.Models.Orders;
 import com.example.demo.Repositories.CustomerRepository;
 import com.example.demo.Repositories.ItemsRepository;
 import com.example.demo.Repositories.OrdersRepository;
-import org.hibernate.cache.spi.support.AbstractReadWriteAccess;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -32,19 +30,24 @@ public class OrdersController {
     public List<Orders> getAllOrders(){
         return OrderRepo.findAll();
     }
-    /*@RequestMapping("orders/{customerId}")
-    public List<Orders> findById(@PathVariable String customerId){
+    @RequestMapping("orders/{customerId}")
+    public List<Orders> findById(@PathVariable Long customerId){
+        if (OrderRepo.findAllByCustomer_Id(customerId)==null){
+            log.info("Order NOT found with costumer id "+customerId);
+            return null;
+        }
         log.info("Order found with costumer id "+customerId);
-        return OrderRepo.findById(customerId);
-    }*/
+        return OrderRepo.findAllByCustomer_Id(customerId);
+    }
     @RequestMapping("orders/add/{ItemsId}/{CustomerId}")
     public String addItems(@PathVariable Long ItemsId, @PathVariable Long CustomerId){
         Customer customer = CustRepo.findById(CustomerId).get();
-        Items item = ItemsRepo.findById(ItemsId).get();
+        Item item = ItemsRepo.findById(ItemsId).get();
 
         Orders k1 = new Orders((LocalDate.now()).toString(), customer);
-        OrderRepo.save(k1);
         k1.addItems(item);
+        OrderRepo.save(k1);
+        log.info("Order created with customer ID "+CustomerId + " and items id " + ItemsId );
 
 
         return "konto lades till hos kund med id "+CustomerId;

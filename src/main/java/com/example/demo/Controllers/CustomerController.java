@@ -21,10 +21,10 @@ public class CustomerController {
 
     @RequestMapping("customers")
     public List<Customer> getAllCustomers(){
-        log.info("All books returned");
-        log.error("All books returned in ERROR mess");
-        log.warn("All books returned in WARNING mess");
-        log.debug("All books returned in DEBUG mess");
+        log.info("All customers returned");
+        log.error("All customers returned in ERROR mess");
+        log.warn("All customers returned in WARNING mess");
+        log.debug("All customers returned in DEBUG mess");
         return repo.findAll();
     }
     @RequestMapping("customers/{id}")

@@ -1,12 +1,12 @@
 package com.example.demo.Repositories;
 
-import com.example.demo.Models.Items;
+import com.example.demo.Models.Item;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface ItemsRepository extends JpaRepository<Items, Long> {
+public interface ItemsRepository extends JpaRepository<Item, Long> {
 
-    public List<Items> findByNamn(String vara);
-    //public List<Items> findItemsByOrdersId(Long OrdersId);
+    public List<Item> findByNamn(String vara);
+    //public List<Item> findItemsByOrdersId(Long OrdersId);
 }
