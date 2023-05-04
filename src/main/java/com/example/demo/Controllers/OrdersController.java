@@ -29,6 +29,7 @@ public class OrdersController {
     }
     @RequestMapping("orders")
     public List<Orders> getAllOrders(){
+        log.info("Orders are showing");
         return OrderRepo.findAll();
     }
     @RequestMapping("orders/{customerId}")
@@ -41,11 +42,12 @@ public class OrdersController {
         Customer customer = CustRepo.findById(CustomerId).get();
         Items item = ItemsRepo.findById(ItemsId).get();
 
+
         Orders k1 = new Orders((LocalDate.now()).toString(), customer);
         OrderRepo.save(k1);
         k1.addItems(item);
-        log.info("Ordern har lagts till.");
-        return "konto lades till hos kund med id "+CustomerId;
+        log.info("Order has been added.");
+        return "Order has been placed for customer id " + CustomerId + " with item id " + ItemsId;
     }
 
 }

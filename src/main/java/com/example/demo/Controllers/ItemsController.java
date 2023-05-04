@@ -1,4 +1,5 @@
 package com.example.demo.Controllers;
+import com.example.demo.Models.Customer;
 import com.example.demo.Models.Items;
 import com.example.demo.Repositories.ItemsRepository;
 import org.slf4j.Logger;
@@ -22,33 +23,22 @@ public class ItemsController {
     //Lista alla varor
     @RequestMapping("items")
     public List<Items> getAllItems(){
-        log.info("Alla varor listade");
+        log.info("All items listed");
         return repo.findAll();
 
     }
     //hitta specifika varor
     @RequestMapping("items/{id}")
     public Items getById(@PathVariable long id){
+        log.info(("Item found with id "+id));
         return repo.findById(id).get();
 
     }
-    //Hitta genom varunamn
-    @RequestMapping("items/{item}/item")
-    public List<Items> findByItem(@PathVariable String item){
-        return repo.findItemsByName(item);
-    }
-    //ta bort varor
-    @RequestMapping("items/{id}/delete")
-    public List<Items> deleteById(@PathVariable long id){
-        repo.deleteById(id);
-        log.info("Tagit bort varan med id " + id);
-        return repo.findAll();
 
-    }
-    @PostMapping("items/add")
-    public List<Items> addItems(@RequestBody Items i){
-        repo.save(i);
-        log.info("Varan har lagts till.");
+    @RequestMapping("items/add")
+    public List<Items> addItem(@RequestParam String name, @RequestParam String pris){
+        repo.save(new Items(name, pris));
+        log.info("Item added");
         return repo.findAll();
 
     }

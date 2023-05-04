@@ -21,10 +21,10 @@ public class CustomerController {
 
     @RequestMapping("customers")
     public List<Customer> getAllCustomers(){
-        log.info("All books returned");
-        log.error("All books returned in ERROR mess");
-        log.warn("All books returned in WARNING mess");
-        log.debug("All books returned in DEBUG mess");
+        log.info("All customers returned");
+        log.error("All customers returned in ERROR mess");
+        log.warn("All customers returned in WARNING mess");
+        log.debug("All customers returned in DEBUG mess");
         return repo.findAll();
     }
     @RequestMapping("customers/{id}")
@@ -33,22 +33,11 @@ public class CustomerController {
         return repo.findById(id).get();
     }
 
-    @RequestMapping("customers/{name}/name")
-    public List<Customer> findByName(@PathVariable String name){
-        return repo.findCustByName(name);
-    }
-
-    @RequestMapping("customers/{id}/delete")
-    public List<Customer> deleteById(@PathVariable long id){
-        repo.deleteById(id);
-        log.info("Costumer deleted with id "+id);
-        return repo.findAll();
-    }
 
     @RequestMapping("customers/add")
     public List<Customer> addCustomers(@RequestParam String name, @RequestParam String PersonNr){
         repo.save(new Customer(name, PersonNr));
-        log.info("Kunden har lagts till.");
+        log.info("Customer added");
         return repo.findAll();
 
     }

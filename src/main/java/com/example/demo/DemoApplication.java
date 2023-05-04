@@ -18,7 +18,7 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 	//Bean som lägger till kunder varor och ordrar.
-	/*@Bean
+	@Bean
 	public CommandLineRunner demo(CustomerRepository costRepo, OrdersRepository orderRepo, ItemsRepository varorRepo){
 		return (args) -> {
 			Customer c1 = new Customer("Lawrence", "8808081123");
@@ -50,6 +50,6 @@ public class DemoApplication {
 			varorRepo.save(v2);
 			varorRepo.save(v3);
 		};
-	}*/
+	}
 
 }
